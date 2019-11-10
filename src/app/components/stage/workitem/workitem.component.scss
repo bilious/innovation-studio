@@ -1,0 +1,95 @@
+@import "../../../../styles.scss";
+
+.workitem {
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    margin: 15px;
+    padding: 5px;
+}
+
+.workitem-title {
+    vertical-align: middle;
+}
+
+.workitem-title .wi-checkbox {
+    margin: 0 7px;
+    vertical-align: sub;
+}
+
+.workitem-title .wi-expand-icon {
+    margin: 0 7px;
+    vertical-align: text-bottom;
+    color: $c-lime;
+}
+
+.workitem-title .wi-title {
+    vertical-align: text-top;
+    color: $c-blue;
+    font-weight: bold;
+    width: 670px;
+    display: inline-block;
+    margin: 0 7px;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+    @media screen and (max-width: $size-xl) {
+        .workitem-title .wi-title {
+        width: 500px; } }
+    @media screen and (max-width: $size-lg) {
+        .workitem-title .wi-title {
+        width: 560px; } }
+    @media screen and (max-width: $size-md) {
+        .workitem-title .wi-title {
+        width: 380px; } }
+    @media screen and (max-width: $size-sm) {
+        .workitem-title .wi-title {
+        width: 330px; } }
+
+.rotate {
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.rotate.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
+.icon-thermometer .icon-a {
+    // font-size: 30px !important;
+    color: $c-red;
+}
+
+.icon-thermometer .icon-b {
+    color: white;
+}
+
+.icon-file .icon-a {
+    color: $c-blue;
+}
+.icon-link .icon-a {
+    color: transparent;
+}
+.icon-link .icon-b {
+    color: $c-blue;
+}
+.icon-message .icon-a {
+    color: $c-blue;
+}
+.icon-message .icon-b, .icon-file .icon-b {
+    color: white;
+}
+.owner {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.owner a {
+    color: black;
+}
+
+.workitem-icons {
+    display: inline-block;
+}
