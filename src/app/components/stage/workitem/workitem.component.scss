@@ -18,15 +18,16 @@
 
 .workitem-title .wi-expand-icon {
     margin: 0 7px;
-    vertical-align: text-bottom;
+    vertical-align: middle;
     color: $c-lime;
 }
 
 .workitem-title .wi-title {
-    vertical-align: text-top;
-    color: $c-blue;
-    font-weight: bold;
-    width: 670px;
+    vertical-align: middle;
+    color: darkblue;
+    font-weight: 500;
+    font-size: 15px;
+    width: 700px;
     display: inline-block;
     margin: 0 7px;
     text-overflow: ellipsis;
@@ -36,7 +37,7 @@
 
     @media screen and (max-width: $size-xl) {
         .workitem-title .wi-title {
-        width: 500px; } }
+        width: 520px; } }
     @media screen and (max-width: $size-lg) {
         .workitem-title .wi-title {
         width: 560px; } }
@@ -92,4 +93,8 @@
 
 .workitem-icons {
     display: inline-block;
+}
+
+.btn-wi-desc-save {
+    color: white;
 }

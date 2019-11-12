@@ -1,12 +1,17 @@
 
-<div class="workitem">
+<mat-card class="workitem">
+    <mat-card-content>
     <div class="workitem-title">
         <mat-checkbox
             class="wi-checkbox"
             [checked]="checked"
             [(ngModel)]="checked">
         </mat-checkbox>
-        <i class="fas fa-play fa-1x wi-expand-icon rotate" aria-hidden="true"></i>
+        <i
+            [ngClass]="showExpand ? 'fas fa-play fa-1x wi-expand-icon rotate down': 'fas fa-play fa-1x wi-expand-icon rotate'"
+            aria-hidden="true" 
+            (click)="clickShowExpand()">
+        </i>
         <div class="wi-title">
             <span> {{ title }} </span>
         </div>
@@ -31,5 +36,20 @@
         </div>
 
     </div>
-</div>
+    <div class="workitem-description mt-3" *ngIf="showExpand">
+        <!-- <editor [init]="{
+            toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+          }"></editor> -->
+        <!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [config]="{ toolbar: [ 'heading', '|', 'bulletedList', 'numberedList', 'alignment:left', 'alignment:right', 'alignment:center', , 'undo', 'redo' ] }"></ckeditor> -->
+        
+        <div class="float-right">
+            <button class="btn btn-warning btn-wi-desc-save">
+                SAVE
+            </button>
+        </div>
+
+        <ckeditor [editor]="Editor" [data]="description"></ckeditor>
+    </div>
+    </mat-card-content>
+</mat-card>
         
