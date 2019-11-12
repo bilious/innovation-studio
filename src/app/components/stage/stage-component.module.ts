@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { WorkitemModule } from './workitem/workitem.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { WorkitemListModule } from './workitem-list/workitem-list.module';
 
 const components = [
 ];
 
 @NgModule({
   imports: [
-    WorkitemModule,
+    WorkitemListModule,
   ],
   declarations: [
     ...components,
   ],
   exports: [
-    WorkitemModule
-  ]
+    WorkitemListModule
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class StageComponentsModule { }

@@ -1,29 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { WorkitemComponent } from '../../components/stage/workitem/workitem.component'
+import { WorkitemListComponent } from './../../components/stage/workitem-list/workitem-list.component'
 
 @Component({
-  selector: 'app-workitem-list',
-  templateUrl: './workitem-list.component.html',
-  styleUrls: ['./workitem-list.component.scss']
+  selector: 'app-sprint1',
+  templateUrl: './sprint1.component.html',
+  styleUrls: ['./sprint1.component.scss']
 })
-export class WorkitemListComponent implements OnInit {
-  @ViewChild("content", {read: WorkitemComponent, static: false}) content: WorkitemComponent;
-  dataWorkitem: any;
-
+export class Sprint1Component implements OnInit {
+  @ViewChild("content", {read: WorkitemListComponent, static: false}) content: WorkitemListComponent;
+  dataWorkitemList: any;
   constructor() {
-    this.dataWorkitem = [
+    this.dataWorkitemList = [
       {
         checked: true,
         title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
         owner: 'Bill Hyde'
       },
       {
-        checked: true,
+        checked: false,
         title: 'Customers Have Difficuly Spreading Butter Straight From The Fridge',
         owner: 'Sarank'
       },
       {
-        checked: true,
+        checked: false,
         title: 'Yello Spreads Are Associated With  Unhealty Fats',
         owner: 'Bill Hyde'
       },
@@ -38,7 +37,4 @@ export class WorkitemListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClickExpand(ind) {
-    console.log(ind)
-  }
 }

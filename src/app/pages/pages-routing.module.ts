@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { WorkitemListComponent } from './workitem-list/workitem-list.component';
 import { PagesComponent } from './pages.component';
+import { Sprint1Component } from './sprint1/sprint1.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,7 +10,7 @@ const routes: Routes = [{
   children: [
   {
     path: 'workitems',
-    component: WorkitemListComponent,
+    component: Sprint1Component,
   },
   {
     path: '',

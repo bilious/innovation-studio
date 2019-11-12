@@ -1,0 +1,30 @@
+<div class="workitem-list mt-3">
+    <app-comp-workitem  #content
+        [checked]="dataWorkitemList[0]['checked']"
+        [title]="dataWorkitemList[0]['title']"
+        [ownerName]="dataWorkitemList[0]['owner']"
+        (onClickExpand)="onClickExpand(0)"
+    >
+    </app-comp-workitem>
+    <app-comp-workitem  #content
+        [checked]="dataWorkitemList[1]['checked']"
+        [title]="dataWorkitemList[1]['title']"
+        [ownerName]="dataWorkitemList[1]['owner']"
+        (onClickExpand)="onClickExpand(1)"
+    >
+    </app-comp-workitem>
+    <app-comp-workitem #content
+        [checked]="dataWorkitemList[2]['checked']"
+        [title]="dataWorkitemList[2]['title']"
+        [ownerName]="dataWorkitemList[2]['owner']"
+        (onClickExpand)="onClickExpand(2)"
+    >
+    </app-comp-workitem>
+    <app-comp-workitem  #content
+        [checked]="dataWorkitemList[3]['checked']"
+        [title]="dataWorkitemList[3]['title']"
+        [ownerName]="dataWorkitemList[3]['owner']"
+        (onClickExpand)="onClickExpand(3)"
+    >
+    </app-comp-workitem>
+</div>
