@@ -10,6 +10,7 @@ export class Sprint1Component implements OnInit {
   @ViewChild("content", {read: WorkitemListComponent, static: false}) content: WorkitemListComponent;
   dataWorkitemList: any;
   constructor() {
+    console.log("asdfasdfasdfasdf");
     this.dataWorkitemList = [
       {
         id:'0',

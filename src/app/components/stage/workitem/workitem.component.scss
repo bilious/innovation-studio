@@ -38,6 +38,7 @@
     text-overflow: ellipsis;
     overflow: hidden; 
     white-space: nowrap;
+    cursor: pointer;
 }
 
     @media screen and (max-width: $size-xl) {
@@ -122,6 +123,7 @@
 .owner {
     margin-left: 10px;
     text-decoration: underline;
+    cursor: pointer;
 }
 .owner a {
     color: black;

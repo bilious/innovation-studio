@@ -13,7 +13,7 @@
             aria-hidden="true" 
             (click)="clickShowExpand()">
         </i>
-        <div class="wi-title">
+        <div class="wi-title" (click)="openChangeTitleDialog()">
             <span> {{ dataWorkitem['title'] }} </span>
         </div>
         <div class="workitem-icons">
@@ -33,7 +33,7 @@
                 <i class="fa fa-square fa-stack-2x icon-a"></i>
                 <i class="fa fa-comments fa-stack-1x icon-b"></i>
             </span>
-            <span class="owner"><a href="#">Owner: {{ dataWorkitem['owner'] }}</a></span>
+            <span class="owner" (click)="openChangeOwnerDialog()"><a>Owner: {{ dataWorkitem['owner'] }}</a></span>
         </div>
 
     </div>

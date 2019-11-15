@@ -1,22 +1,30 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule} from '@angular/common';
-import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from './../components/components.module';
+
+// components
+import { PagesComponent } from './pages.component';
 import { Sprint1Module } from './sprint1/sprint1.module';
+import { Sprint1Component } from './sprint1/sprint1.component';
 
 @NgModule({
   imports: [
     PagesRoutingModule,
     FormsModule,
     CommonModule,
-    Sprint1Module
+    ComponentsModule,
+    // Sprint1Module
   ],
   declarations: [
     PagesComponent,
+    Sprint1Component
   ],
   exports: [
-  ]
+    ComponentsModule
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class PagesModule {
 }

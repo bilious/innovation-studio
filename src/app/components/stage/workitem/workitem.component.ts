@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { PromptDialogComponent } from '../../common/prompt-dialog/prompt-dialog.component';
 
 @Component({
   selector: 'app-comp-workitem',
@@ -21,7 +23,12 @@ export class WorkitemComponent implements OnInit {
   public Editor = ClassicEditor;
   showExpand: boolean;
 
-  constructor() {
+  text: string;
+  title: string;
+
+  constructor(
+    public dialog: MatDialog
+  ) {
     this.showExpand = false;
   }
 
@@ -30,5 +37,27 @@ export class WorkitemComponent implements OnInit {
 
   clickShowExpand() {
     this.showExpand = !this.showExpand;
+  }
+
+  openChangeTitleDialog(): void {
+    const dialogRef = this.dialog.open(PromptDialogComponent, {
+      width: '600px',
+      data: {title: 'Title', text: this.dataWorkitem.title}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.dataWorkitem.title = result;
+    });
+  }
+
+  openChangeOwnerDialog(): void {
+    const dialogRef = this.dialog.open(PromptDialogComponent, {
+      width: '400px',
+      data: {title: 'Owner', text: this.dataWorkitem.owner}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.dataWorkitem.owner = result;
+    });
   }
 }

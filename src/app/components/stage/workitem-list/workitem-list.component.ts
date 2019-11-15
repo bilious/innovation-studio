@@ -11,6 +11,7 @@ export class WorkitemListComponent implements OnInit {
   @Input() dataWorkitemList: any;
 
   constructor() {
+    console.log("asdfasdfasdfasdf")
   }
 
   ngOnInit() {

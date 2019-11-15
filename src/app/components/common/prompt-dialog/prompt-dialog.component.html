@@ -1,0 +1,11 @@
+<h1 mat-dialog-title class="text-center">{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>What do you want to change content?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.text" class="input-change-text">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="dlg-button">
+  <button mat-button (click)="onNoClick()" mat-raised-button cdkFocusInitial>Cancel</button>
+  <button mat-button [mat-dialog-close]="data.text" mat-raised-button>OK</button>
+</div>
