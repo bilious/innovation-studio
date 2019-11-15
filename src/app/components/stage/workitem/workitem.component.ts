@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
@@ -7,12 +7,17 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./workitem.component.scss']
 })
 export class WorkitemComponent implements OnInit {
-  @Input() title: string;
-  @Input() checked: boolean;
-  @Input() ownerName: string;
-  @Input() public description: string;
-  @Output('onClick') triggerClick: EventEmitter<any> = new EventEmitter<any>();
 
+  @Input() dataWorkitem: any;
+  @Input() level: any;
+  // @Input() title: string;
+  // @Input() checked: boolean;
+  // @Input() ownerName: string;
+  // @Input() public description: string;
+  // @Output('onClick') triggerClick: EventEmitter<any> = new EventEmitter<any>();
+  @ViewChild("content", {read: WorkitemComponent, static: false}) content: WorkitemComponent;
+
+  isChild = false;
   public Editor = ClassicEditor;
   showExpand: boolean;
 
@@ -23,12 +28,7 @@ export class WorkitemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.triggerClick.emit(null);
-  }
-
   clickShowExpand() {
-    // alert("click expand");
     this.showExpand = !this.showExpand;
   }
 }

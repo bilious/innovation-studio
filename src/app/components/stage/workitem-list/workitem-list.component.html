@@ -1,34 +1,8 @@
 <div class="workitem-list mt-3">
     <app-comp-workitem  #content
-        [checked]="dataWorkitemList[0]['checked']"
-        [title]="dataWorkitemList[0]['title']"
-        [ownerName]="dataWorkitemList[0]['owner']"
-        [description]="dataWorkitemList[0]['description']"
-        (onClickExpand)="onClickExpand(0)"
-    >
-    </app-comp-workitem>
-    <app-comp-workitem  #content
-        [checked]="dataWorkitemList[1]['checked']"
-        [title]="dataWorkitemList[1]['title']"
-        [ownerName]="dataWorkitemList[1]['owner']"
-        [description]="dataWorkitemList[1]['description']"
-        (onClickExpand)="onClickExpand(1)"
-    >
-    </app-comp-workitem>
-    <app-comp-workitem #content
-        [checked]="dataWorkitemList[2]['checked']"
-        [title]="dataWorkitemList[2]['title']"
-        [ownerName]="dataWorkitemList[2]['owner']"
-        [description]="dataWorkitemList[2]['description']"
-        (onClickExpand)="onClickExpand(2)"
-    >
-    </app-comp-workitem>
-    <app-comp-workitem  #content
-        [checked]="dataWorkitemList[3]['checked']"
-        [title]="dataWorkitemList[3]['title']"
-        [ownerName]="dataWorkitemList[3]['owner']"
-        [description]="dataWorkitemList[3]['description']"
-        (onClickExpand)="onClickExpand(3)"
+        *ngFor="let dataWorkitem of dataWorkitemList"
+        [dataWorkitem]="dataWorkitem"
+        [level]=0
     >
     </app-comp-workitem>
 </div>

@@ -1,11 +1,12 @@
+<div>
 
 <mat-card class="workitem">
     <mat-card-content>
     <div class="workitem-title">
         <mat-checkbox
             class="wi-checkbox"
-            [checked]="checked"
-            [(ngModel)]="checked">
+            [checked]="dataWorkitem['checked']"
+            [(ngModel)]="dataWorkitem['checked']">
         </mat-checkbox>
         <i
             [ngClass]="showExpand ? 'fas fa-play fa-1x wi-expand-icon rotate down': 'fas fa-play fa-1x wi-expand-icon rotate'"
@@ -13,7 +14,7 @@
             (click)="clickShowExpand()">
         </i>
         <div class="wi-title">
-            <span> {{ title }} </span>
+            <span> {{ dataWorkitem['title'] }} </span>
         </div>
         <div class="workitem-icons">
             <span class="fa-stack icon-thermometer">
@@ -32,7 +33,7 @@
                 <i class="fa fa-square fa-stack-2x icon-a"></i>
                 <i class="fa fa-comments fa-stack-1x icon-b"></i>
             </span>
-            <span class="owner"><a href="#">Owner: {{ ownerName }}</a></span>
+            <span class="owner"><a href="#">Owner: {{ dataWorkitem['owner'] }}</a></span>
         </div>
 
     </div>
@@ -48,8 +49,22 @@
             </button>
         </div>
 
-        <ckeditor [editor]="Editor" [data]="description"></ckeditor>
+        <ckeditor [editor]="Editor" [data]="dataWorkitem['description']"></ckeditor>
     </div>
     </mat-card-content>
 </mat-card>
+<div 
+    *ngIf="dataWorkitem['children'] && dataWorkitem['children'].length > 0 && showExpand" 
+    class="child-workitem"
+    [attr.child-level]="level"
+    >
+    <app-comp-workitem  #content
+        *ngFor="let chDataWorkitem of dataWorkitem['children'] ; let i = index"
+        [dataWorkitem]="chDataWorkitem"
+        [level]="level + 1"
+    >
+    </app-comp-workitem>
+</div>
+
+</div>
         

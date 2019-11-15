@@ -15,8 +15,4 @@ export class WorkitemListComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onClickExpand(ind) {
-    console.log(ind)
-  }
 }
