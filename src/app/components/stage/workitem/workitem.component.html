@@ -2,7 +2,7 @@
 
 <mat-card class="workitem">
     <mat-card-content>
-    <div class="workitem-title">
+    <div class="workitem-header">
         <mat-checkbox
             class="wi-checkbox"
             [checked]="dataWorkitem['checked']"
@@ -11,7 +11,7 @@
         <i
             [ngClass]="showExpand ? 'fas fa-play fa-1x wi-expand-icon rotate down': 'fas fa-play fa-1x wi-expand-icon rotate'"
             aria-hidden="true" 
-            (click)="clickShowExpand()">
+            (click)="onClickShowExpand()">
         </i>
         <div class="wi-title" (click)="openChangeTitleDialog()">
             <span> {{ dataWorkitem['title'] }} </span>
@@ -38,18 +38,23 @@
 
     </div>
     <div class="workitem-description mt-3" *ngIf="showExpand">
+        <div 
+            class="div-wi-description"
+            [innerHTML]="dataWorkitem['description']" 
+            *ngIf="!isEditDesc" 
+            (click)="onClickDescEdit()"
+        ></div>
         <!-- <editor [init]="{
             toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
           }"></editor> -->
         <!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [config]="{ toolbar: [ 'heading', '|', 'bulletedList', 'numberedList', 'alignment:left', 'alignment:right', 'alignment:center', , 'undo', 'redo' ] }"></ckeditor> -->
-        
-        <div class="float-right">
-            <button class="btn btn-warning btn-wi-desc-save">
+        <div *ngIf="isEditDesc">
+            <button class="btn btn-warning btn-wi-desc-save" (click)="onClickDescSave()">
                 SAVE
             </button>
+            <ckeditor [editor]="Editor" [data]="dataWorkitem['description']" [(ngModel)]="dataWorkitem['description']"></ckeditor>
         </div>
 
-        <ckeditor [editor]="Editor" [data]="dataWorkitem['description']"></ckeditor>
     </div>
     </mat-card-content>
 </mat-card>

@@ -26,6 +26,7 @@ export class PromptDialogComponent implements OnInit {
   }
 
   onNoClick(): void {
+    //cdkFocusInitial
     this.dialogRef.close(this.oldText);
   }
 

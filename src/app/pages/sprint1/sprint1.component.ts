@@ -9,11 +9,14 @@ import { WorkitemListComponent } from './../../components/stage/workitem-list/wo
 export class Sprint1Component implements OnInit {
   @ViewChild("content", {read: WorkitemListComponent, static: false}) content: WorkitemListComponent;
   dataWorkitemList: any;
+  selectedIds: Array<string>;
+
   constructor() {
+    this.selectedIds = [];
     console.log("asdfasdfasdfasdf");
     this.dataWorkitemList = [
       {
-        id:'0',
+        id:'0010AE01',
         checked: true,
         changed: false,
         title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -21,7 +24,7 @@ export class Sprint1Component implements OnInit {
         description: '<p>Welcome to visit work item: <b>How Does it Fit Into Your Product Or Brand Strategy ?</b></p>',
         children: [
           {
-            id:'00',
+            id:'0010AE02',
             checked: false,
             changed: false,
             title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -29,7 +32,7 @@ export class Sprint1Component implements OnInit {
             description: '<p>Welcome to visit work item: <b>How Does it Fit Into Your Product Or Brand Strategy ?</b></p>',
             children: [
               {
-                id:'000',
+                id:'0010AE06',
                 checked: false,
                 changed: false,
                 title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -37,7 +40,7 @@ export class Sprint1Component implements OnInit {
                 description: '<p>Welcome to visit work item: <b>How Does it Fit Into Your Product Or Brand Strategy ?</b></p>',
                 children: [
                   {
-                    id:'0000',
+                    id:'0010AE07',
                     checked: false,
                     changed: false,
                     title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -46,7 +49,7 @@ export class Sprint1Component implements OnInit {
                     children: []
                   },
                   {
-                    id:'0001',
+                    id:'0010AE08',
                     checked: false,
                     changed: false,
                     title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -57,7 +60,7 @@ export class Sprint1Component implements OnInit {
                 ]
               },
               {
-                id:'001',
+                id:'0010AE03',
                 checked: false,
                 changed: false,
                 title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -65,7 +68,7 @@ export class Sprint1Component implements OnInit {
                 description: '<p>Welcome to visit work item: <b>How Does it Fit Into Your Product Or Brand Strategy ?</b></p>',
                 children: [
                   {
-                    id:'0010',
+                    id:'0010AE05',
                     checked: false,
                     changed: false,
                     title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -78,7 +81,7 @@ export class Sprint1Component implements OnInit {
             ]
           },
           {
-            id:'01',
+            id:'0010AE04',
             checked: false,
             changed: false,
             title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -89,7 +92,7 @@ export class Sprint1Component implements OnInit {
         ]
       },
       {
-        id: '1',
+        id: '0010AE09',
         checked: true,
         changed: false,
         title: 'Customers Have Difficuly Spreading Butter Straight From The Fridge',
@@ -97,7 +100,7 @@ export class Sprint1Component implements OnInit {
         description: '<p>Welcome to visit work item: <b>Customers Have Difficuly Spreading Butter Straight From The Fridge</b></p>',
         children: [
           {
-            id:'10',
+            id:'0010AE11',
             checked: false,
             changed: false,
             title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -105,7 +108,7 @@ export class Sprint1Component implements OnInit {
             description: '<p>Welcome to visit work item: <b>How Does it Fit Into Your Product Or Brand Strategy ?</b></p>',
             children: [
               {
-                id:'100',
+                id:'0010AE12',
                 checked: false,
                 changed: false,
                 title: 'How Does it Fit Into Your Product Or Brand Strategy ?',
@@ -118,16 +121,16 @@ export class Sprint1Component implements OnInit {
         ]
       },
       {
-        id: '2',
+        id: '0010AE10',
         checked: true,
         changed: false,
         title: 'Yello Spreads Are Associated With  Unhealty Fats',
         owner: 'Bill Hyde',
-        description: '<p>Welcome to visit work item: <b>Yello Spreads Are Associated With  Unhealty Fats</b></p>',
+        description: '',
         children: []
       },
       {
-        id: '3',
+        id: '0010AE13',
         checked: false,
         changed: false,
         title: 'Customers Do Not Understand The Difference Between Complex & Simple Fats',
@@ -141,4 +144,19 @@ export class Sprint1Component implements OnInit {
   ngOnInit() {
   }
 
+  onClickRun() {
+    this.selectedIds = [];
+    this.recursiveDataSearch(this.dataWorkitemList);
+    console.log(this.selectedIds);
+    alert("Selected IDs: " + this.selectedIds.join());
+  }
+
+  private recursiveDataSearch(objects) {
+    for (let o of objects || []) {
+      if (o.checked == true) 
+        this.selectedIds.push(o.id);
+      if (o.children) 
+        this.recursiveDataSearch(o.children);
+    }
+  }
 }

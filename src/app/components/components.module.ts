@@ -1,9 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PromptDialogComponent } from './common/prompt-dialog/prompt-dialog.component';
-import { WorkitemComponent } from './stage/workitem/workitem.component';
-import { WorkitemListComponent } from './stage/workitem-list/workitem-list.component';
 
 // material modules
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -12,6 +9,10 @@ import { MatDialogModule } from '@angular/material';
 
 // custom modules
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { PromptDialogComponent } from './common/prompt-dialog/prompt-dialog.component';
+import { WorkitemComponent } from './stage/workitem/workitem.component';
+import { WorkitemListComponent } from './stage/workitem-list/workitem-list.component';
+import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
 
 @NgModule({
     imports: [
@@ -31,14 +32,15 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
         PromptDialogComponent,
         WorkitemComponent,
         WorkitemListComponent,
+        AlertDialogComponent,
     ],
     exports: [
-        PromptDialogComponent,
         WorkitemComponent,
         WorkitemListComponent,
     ],
     entryComponents: [
-        PromptDialogComponent
+        PromptDialogComponent,
+        AlertDialogComponent,
     ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

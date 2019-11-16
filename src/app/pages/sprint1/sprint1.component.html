@@ -34,9 +34,15 @@
         <button class="btn btn-add-to-library" mat-raised-button>
             <i class="fa fa-link pull-left" aria-hidden="true"></i>&nbsp;&nbsp;Add To Library
         </button>
-        <button class="btn btn-add" mat-raised-button>
-            Add
-        </button>
+        <div class="workitem-list-btns">
+            <button class="btn btn-add" mat-raised-button>
+                Add
+            </button>
+            <button class="btn btn-success btn-run-action" mat-raised-button (click)="onClickRun()">
+                Run
+            </button>
+        </div>
+
     </div>
     <app-comp-workitem-list  #content [dataWorkitemList]="dataWorkitemList">
     </app-comp-workitem-list>

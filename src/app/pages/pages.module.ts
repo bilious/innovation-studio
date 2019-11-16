@@ -8,6 +8,7 @@ import { ComponentsModule } from './../components/components.module';
 import { PagesComponent } from './pages.component';
 import { Sprint1Module } from './sprint1/sprint1.module';
 import { Sprint1Component } from './sprint1/sprint1.component';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { Sprint1Component } from './sprint1/sprint1.component';
     CommonModule,
     ComponentsModule,
     // Sprint1Module
+    MatButtonModule
   ],
   declarations: [
     PagesComponent,
