@@ -43,24 +43,36 @@ export class WorkitemComponent implements OnInit {
     }
   }
 
-  // click expand icon
+  /**
+   * Click event - Expand / Collapse icon button
+   * Show and hide work item detail
+   */
   onClickShowExpand() {
     this.showExpand = !this.showExpand;
   }
 
-  // click description
+  /**
+   * Click event - Description text
+   * Show WYSIWYG to edit rich text and edit description
+   */
   onClickDescEdit() {
     this.isEditDesc = true;
   }
 
-  // click button save
+  /**
+   * Click event - Save button
+   * Save edited description of work item
+   */
   onClickDescSave() {
     if (this.dataWorkitem.description) {
       this.isEditDesc = false;
     }
   }
 
-  // click title to change
+  /**
+   * Click event - Title text
+   * Show dialog to change title, and click OK / Cancel
+   */
   openChangeTitleDialog(): void {
     const dialogRef = this.dialog.open(PromptDialogComponent, {
       width: '600px',
@@ -72,7 +84,10 @@ export class WorkitemComponent implements OnInit {
     });
   }
 
-  // click owner to change
+  /**
+   * Click event - Owner text
+   * Show dialog to change Ownername, and click OK / Cancel
+   */
   openChangeOwnerDialog(): void {
     const dialogRef = this.dialog.open(PromptDialogComponent, {
       width: '400px',

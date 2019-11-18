@@ -1,6 +1,87 @@
 @import "../../../../styles.scss";
 
-.workitem-list {
+// Workitem list header control styles
+.workitem-list-header .sel-solution-statement {
+    min-width: 565px;
+    border-left: 3px solid $c-green;
+}
+
+    @media screen and (max-width: $size-xl) {
+        .sel-solution-statement {
+            min-width: 385px; } }
+    @media screen and (max-width: $size-lg) {
+        .sel-solution-statement {
+            min-width: 335px; } }
+    @media screen and (max-width: $size-md) {
+        .sel-solution-statement {
+            min-width: 340px; } }
+    @media screen and (max-width: $size-sm) {
+        .sel-solution-statement {
+            min-width: 290px; } }
+
+.workitem-list-header .btn-add {
+    background-color: $c-lime;
+    min-width: 90px;
+    color: white;
+    margin: 10px 10px 10px 0;
+    line-height: 2rem;
+}
+
+.workitem-list-header .btn-add-to-library {
+    background-color: white;
+    min-width: 130px;
+    color: $c-blue;
+    line-height: 2rem;
+    border: 1px $c-blue solid;
+    margin: 10px 10px 10px 20px;
+}
+
+.workitem-list-btns {
+    display: inline-block;
+}
+
+.workitem-list-header .btn-run-action {
+    min-width: 90px;
+    margin: 10px 0;
+    line-height: 2rem;
+}
+
+    @media screen and (max-width: $size-md) {
+        .workitem-list-header .btn-add-to-library {
+            margin-left: 0; } }
+    @media screen and (max-width: $size-sm) {
+        .workitem-list-header .btn-add-to-library {
+            margin-left: 0; } }
+
+// Workitem body styles
+.workitem-list-body {
     border: 2px solid $c-lime;
     padding: 5px;
+    position: relative;
+}
+
+.workitem-list-setting {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.workitem-list-body .hide-setting-icon {
+    color: transparent;
+    font-size: 30px;
+}
+
+.workitem-list-body .show-setting-icon {
+    color: #333333;
+    font-size: 30px;
+}
+
+.workitem-list-setting-btn:focus {outline:0 !important;}
+
+.alert-setting {
+    border-radius: 3px;
+    border: 2px solid $c-lime;
+    padding: 3px 10px;
+    width: fit-content;
+    margin: 5px 0;
 }

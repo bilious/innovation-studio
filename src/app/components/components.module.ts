@@ -4,8 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 // material modules
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatCardModule, MatButtonModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+
 
 // custom modules
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -26,7 +30,9 @@ import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.compone
         MatCheckboxModule,
         MatCardModule, 
         MatButtonModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule,
+        MatMenuModule
     ],
     declarations: [
         PromptDialogComponent,

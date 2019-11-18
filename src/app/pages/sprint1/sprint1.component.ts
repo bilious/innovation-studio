@@ -9,11 +9,8 @@ import { WorkitemListComponent } from './../../components/stage/workitem-list/wo
 export class Sprint1Component implements OnInit {
   @ViewChild("content", {read: WorkitemListComponent, static: false}) content: WorkitemListComponent;
   dataWorkitemList: any;
-  selectedIds: Array<string>;
 
-  constructor() {
-    this.selectedIds = [];
-    console.log("asdfasdfasdfasdf");
+  constructor() {  
     this.dataWorkitemList = [
       {
         id:'0010AE01',
@@ -142,21 +139,5 @@ export class Sprint1Component implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  onClickRun() {
-    this.selectedIds = [];
-    this.recursiveDataSearch(this.dataWorkitemList);
-    console.log(this.selectedIds);
-    alert("Selected IDs: " + this.selectedIds.join());
-  }
-
-  private recursiveDataSearch(objects) {
-    for (let o of objects || []) {
-      if (o.checked == true) 
-        this.selectedIds.push(o.id);
-      if (o.children) 
-        this.recursiveDataSearch(o.children);
-    }
   }
 }

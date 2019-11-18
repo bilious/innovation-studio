@@ -1,8 +1,45 @@
-<div class="workitem-list mt-3">
-    <app-comp-workitem  #content
-        *ngFor="let dataWorkitem of dataWorkitemList"
-        [dataWorkitem]="dataWorkitem"
-        [level]=0
-    >
-    </app-comp-workitem>
+<div class="workitem-list">
+    <div class="workitem-list-header mt-5">
+        <span class="font-weight-bold">
+            WorkStream/Module:
+        </span>
+        <select class="sel-solution-statement m-input form-control-sm">
+            <option selected>Solution Statements</option>
+            <option value="1">Solution1</option>
+            <option value="2">Solution3</option>
+            <option value="3">Solution2</option>
+        </select>
+        <button class="btn btn-add-to-library" mat-raised-button>
+            <i class="fa fa-link pull-left" aria-hidden="true"></i>&nbsp;&nbsp;Add To Library
+        </button>
+        <div class="workitem-list-btns">
+            <button class="btn btn-add" mat-raised-button>
+                Add
+            </button>
+            <button class="btn btn-success btn-run-action" mat-raised-button (click)="onClickRun()">
+                Run
+            </button>
+        </div>
+    
+    </div>
+    <div *ngIf="showSetting" class="alert-setting">No settings avaiable</div>
+    <div class="workitem-list-body mt-3">
+        
+        <app-comp-workitem  #content
+            *ngFor="let dataWorkitem of dataWorkitemList"
+            [dataWorkitem]="dataWorkitem"
+            [level]=0
+        >
+        </app-comp-workitem>
+        <div 
+            (mouseover)="showSettingIcon=true" 
+            (mouseout)="showSettingIcon=false"
+            class="workitem-list-setting" >
+            <button mat-icon-button class="workitem-list-setting-btn" (click)="onClickSetting()">
+                <mat-icon *ngIf="!showSettingIcon" class="hide-setting-icon">settings</mat-icon>
+                <mat-icon *ngIf="showSettingIcon" class="show-setting-icon">settings</mat-icon>
+            </button>
+        </div>
+    </div>
+            
 </div>
