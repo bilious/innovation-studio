@@ -14,6 +14,7 @@
 
 .workitem-header {
     vertical-align: middle;
+    position: relative;
 }
 
 .workitem-header .wi-checkbox {
@@ -141,6 +142,28 @@
 }
 
 .div-wi-description {
-    padding: 3px 5px;
+    padding: 3px 10px;
     cursor: pointer;
+}
+
+.workitem-tags {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+mat-chip.wi-tag {
+    // color: #3fb553
+    color: red;
+}
+
+.wi-ranking {
+    position: absolute;
+    right: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    top: 4px;
+    font-size: 10px;
+    padding: 0px 4px;
+
 }

@@ -1,5 +1,5 @@
 <div class="workitem-list">
-    <div class="workitem-list-header mt-5">
+    <div class="workitem-list-header mt-3">
         <span class="font-weight-bold">
             WorkStream/Module:
         </span>
@@ -22,11 +22,14 @@
         </div>
     
     </div>
-    <div *ngIf="showSetting" class="alert-setting">No settings avaiable</div>
+    <div class="alert alert-danger" role="alert" *ngIf="showSetting" >
+        No settings avaiable !
+    </div>
+    <!-- <div *ngIf="showSetting" class="alert-setting">No settings avaiable</div> -->
     <div class="workitem-list-body mt-3">
         
         <app-comp-workitem  #content
-            *ngFor="let dataWorkitem of dataWorkitemList"
+            *ngFor="let dataWorkitem of dataWorkitemList1"
             [dataWorkitem]="dataWorkitem"
             [level]=0
         >

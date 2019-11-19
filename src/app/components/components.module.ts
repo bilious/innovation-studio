@@ -9,7 +9,8 @@ import { MatDialogModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatChipsModule } from '@angular/material/chips';
+import { MatBadgeModule } from '@angular/material/badge';
 
 // custom modules
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -32,7 +33,9 @@ import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.compone
         MatButtonModule,
         MatDialogModule,
         MatIconModule,
-        MatMenuModule
+        MatMenuModule,
+        MatChipsModule,
+        MatBadgeModule
     ],
     declarations: [
         PromptDialogComponent,

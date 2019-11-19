@@ -1,5 +1,40 @@
 
 <div class="container">
-    <app-comp-workitem-list  #content [dataWorkitemList]="dataWorkitemList">
+    <div class="parent-setting mt-3">
+        <div class="wi-list-filter-order">
+            <mat-form-field>
+                <mat-label>Filter Type</mat-label>
+                <mat-select [(ngModel)]="filter.type" (selectionChange)="changeFilterType()">
+                    <mat-option value="">None</mat-option>
+                    <mat-option *ngFor="let item of filters" [value]="item.type">
+                        {{ item.type }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="ml-5">
+                <mat-label>Filter Value</mat-label>
+                <mat-select [(ngModel)]="filter.value" (selectionChange)="changeFilterValue()">
+                    <mat-option value="">None</mat-option>
+                    <mat-option *ngFor="let item of filterValues" [value]="item.value">
+                        {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="ml-5">
+                <mat-label>Order By</mat-label>
+                <mat-select [(ngModel)]="orderBy" (selectionChange)="changeOrderBy()">
+                    <mat-option value="">None</mat-option>
+                    <mat-option *ngFor="let item of orderValues" [value]="item.value">
+                        {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <app-comp-workitem-list  #content 
+        [dataWorkitemList]="dataWorkitemList" 
+        [filterType]="filter['type']" 
+        [filterValue]="filter['value']" 
+        [orderBy]="orderBy">
     </app-comp-workitem-list>
 </div>

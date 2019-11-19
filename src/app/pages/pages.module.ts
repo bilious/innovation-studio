@@ -10,6 +10,9 @@ import { Sprint1Module } from './sprint1/sprint1.module';
 import { Sprint1Component } from './sprint1/sprint1.component';
 import { MatButtonModule } from '@angular/material';
 
+// Material
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -17,7 +20,11 @@ import { MatButtonModule } from '@angular/material';
     CommonModule,
     ComponentsModule,
     // Sprint1Module
-    MatButtonModule
+    MatButtonModule,
+
+    // Material Module
+    MatSelectModule
+
   ],
   declarations: [
     PagesComponent,

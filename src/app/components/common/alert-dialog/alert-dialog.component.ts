@@ -24,7 +24,6 @@ export class AlertDialogComponent implements OnInit {
   }
 
   onClose(): void {
-    //cdkFocusInitial
     this.dialogRef.close();
   }
 
